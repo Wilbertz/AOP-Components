@@ -185,27 +185,6 @@ namespace AOP.Attributes.Tests
             }
         }
 
-        private Mock<ILogger> GetMockedLogger()
-        {
-            var mockedLogger = new Mock<ILogger>();
-
-            mockedLogger.Setup(m => m.Fatal(It.IsAny<string>())).Callback<string>(Console.WriteLine);
-            mockedLogger.Setup(m => m.Error(It.IsAny<string>())).Callback<string>(Console.WriteLine);
-            mockedLogger.Setup(m => m.Warn(It.IsAny<string>())).Callback<string>(Console.WriteLine);
-            mockedLogger.Setup(m => m.Info(It.IsAny<string>())).Callback<string>(Console.WriteLine);
-            mockedLogger.Setup(m => m.Debug(It.IsAny<string>())).Callback<string>(Console.WriteLine);
-            mockedLogger.Setup(m => m.Trace(It.IsAny<string>())).Callback<string>(Console.WriteLine);
-
-            mockedLogger.SetupGet(p => p.IsFatalEnabled).Returns(true);
-            mockedLogger.SetupGet(p => p.IsErrorEnabled).Returns(true);
-            mockedLogger.SetupGet(p => p.IsWarnEnabled).Returns(true);
-            mockedLogger.SetupGet(p => p.IsInfoEnabled).Returns(true);
-            mockedLogger.SetupGet(p => p.IsDebugEnabled).Returns(true);
-            mockedLogger.SetupGet(p => p.IsTraceEnabled).Returns(true);
-
-            return mockedLogger;
-        }
-
         #endregion
     }
 }
