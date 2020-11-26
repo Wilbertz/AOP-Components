@@ -3510,11 +3510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Components.Tests\\Attributes.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes.Tests\\Attributes.Tests.csproj",
       "projectName": "Attributes.Tests",
-      "projectPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Components.Tests\\Attributes.Tests.csproj",
+      "projectPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes.Tests\\Attributes.Tests.csproj",
       "packagesPath": "C:\\Users\\haral\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Components.Tests\\obj\\",
+      "outputPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

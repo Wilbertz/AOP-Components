@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ea4duewy7vxOYkrHGzmkh9gsABzKAbkfw2cntpHtVeXgoP3NTgDQh/M4EbOxs0RPuZUL4/Zl/KbyMctKDEFalA==",
+  "dgSpecHash": "DT8aJSOCUW2kiFGF1Ag8CE78yJTcnQwubYW3oa7Nmw7iksduVLtODLYE2mS1BNgEgubdL05QG9v2/pzU8QqQIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Components.Tests\\Attributes.Tests.csproj",
+  "projectFilePath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes.Tests\\Attributes.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\haral\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\haral\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

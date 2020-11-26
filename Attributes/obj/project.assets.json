@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\AOP-Components\\Attributes.csproj",
+      "projectUniqueName": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes\\Attributes.csproj",
       "projectName": "Attributes",
-      "projectPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\AOP-Components\\Attributes.csproj",
+      "projectPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes\\Attributes.csproj",
       "packagesPath": "C:\\Users\\haral\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\AOP-Components\\obj\\",
+      "outputPath": "C:\\Users\\haral\\source\\Repos\\AOP-Components\\Attributes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
