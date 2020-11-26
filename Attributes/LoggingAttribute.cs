@@ -1,6 +1,8 @@
-﻿namespace AOP.Attributes
+﻿using MethodBoundaryAspect.Fody.Attributes;
+
+namespace AOP.Attributes
 {
-    public class LoggingAttribute
+    public sealed class LoggingAttribute : OnMethodBoundaryAspect
     {
     }
 }

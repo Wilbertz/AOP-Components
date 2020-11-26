@@ -5,4 +5,9 @@
     <RootNamespace>AOP.Attributes</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MethodBoundaryAspect.Fody" Version="2.0.138" />
+    <PackageReference Include="NLog" Version="4.7.5" />
+  </ItemGroup>
+
 </Project>
