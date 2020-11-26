@@ -1,0 +1,9 @@
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\bin\Debug\netcoreapp3.1\Attributes.deps.json
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\bin\Debug\netcoreapp3.1\Attributes.dll
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\bin\Debug\netcoreapp3.1\Attributes.pdb
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\obj\Debug\netcoreapp3.1\Attributes.csprojAssemblyReference.cache
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\obj\Debug\netcoreapp3.1\Attributes.AssemblyInfoInputs.cache
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\obj\Debug\netcoreapp3.1\Attributes.AssemblyInfo.cs
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\obj\Debug\netcoreapp3.1\Attributes.csproj.CoreCompileInputs.cache
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\obj\Debug\netcoreapp3.1\Attributes.dll
+C:\Users\haral\source\Repos\AOP-Components\AOP-Components\obj\Debug\netcoreapp3.1\Attributes.pdb
