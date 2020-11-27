@@ -59,6 +59,7 @@ namespace AOP.Attributes.Tests
         }
     }
 
+    [Collection("Sequential")]
     public class LoggingAttributeTests : IClassFixture<LoggingAttributeTestsSetupCode>
     {
         private readonly Mock<ILogger> _mockedLogger;
@@ -98,7 +99,6 @@ namespace AOP.Attributes.Tests
             // Act
             _classUnderTest.MethodToBeTested();
 
-            _output.WriteLine("Harald");
             // Assert
             _mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
             _mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
@@ -148,6 +148,26 @@ namespace AOP.Attributes.Tests
                 s.Equals("Init: AOP.Attributes.Tests.LoggingAttributeTests+ClassUnderTest.MethodWithReturnValueToBeTested [0] params"))), Times.Once);
             _mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
             _mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: [42]"))), Times.Once);
+            _mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
+
+        [Fact]
+        public async Task Async_Return_Should_Be_Logged()
+        {
+            // Arrange 
+            // Act
+            await _classUnderTest.AsyncMethodWithoutReturnValueToBeTested();
+            await Task.Delay(1000);
+
+            // Assert
+
+            _mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: AOP.Attributes.Tests.LoggingAttributeTests+ClassUnderTest.AsyncMethodWithoutReturnValueToBeTested [0] params"))), Times.Once);
+            _mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: []"))), Times.Once);
             _mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
 

@@ -14,6 +14,7 @@ namespace AOP.Attributes
 
         private static readonly Lazy<int> FirstIndentation = new Lazy<int>(() =>
         {
+            Logger.Trace("Lazy Initialization called.");
             var st = new StackTrace(false);
             return st.FrameCount;
         });
