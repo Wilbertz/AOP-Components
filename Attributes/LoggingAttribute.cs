@@ -10,9 +10,13 @@ namespace AOP.Attributes
 {
     public sealed class LoggingAttribute : OnMethodBoundaryAspect
     {
-        private static int _firstIndentation = -1;
-
         private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
+
+        private static readonly Lazy<int> FirstIndentation = new Lazy<int>(() =>
+        {
+            var st = new StackTrace(false);
+            return st.FrameCount;
+        });
 
         public override void OnEntry(MethodExecutionArgs args)
         {
@@ -56,14 +60,9 @@ namespace AOP.Attributes
 
         private string GetIndentation(int additionalIndentation = 0)
         {
-            // ToDo: Make code thread safe
             StackTrace st = new StackTrace(false);
-            if (_firstIndentation == -1)
-            {
-                _firstIndentation = st.FrameCount;
-            }
 
-            return String.Concat(Enumerable.Repeat("   ", Math.Max(st.FrameCount + additionalIndentation - _firstIndentation, 0)));
+            return String.Concat(Enumerable.Repeat("   ", Math.Max(st.FrameCount + additionalIndentation - FirstIndentation.Value, 0)));
         }
     }
 }

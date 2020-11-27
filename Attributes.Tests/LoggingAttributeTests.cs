@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 
 using FluentAssertions;
@@ -149,6 +150,29 @@ namespace AOP.Attributes.Tests
             _mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: [42]"))), Times.Once);
             _mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
+
+        [Fact]
+        public async Task Async_Return_Value_Should_Be_Logged()
+        {
+            // Arrange 
+            // Act
+            var result = await _classUnderTest.AsyncMethodToBeTested();
+            // We have to wait for the task continuation to complete.
+            await Task.Delay(1000);
+
+            // Assert
+            result.Should().Be(42);
+
+            _mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: AOP.Attributes.Tests.LoggingAttributeTests+ClassUnderTest.AsyncMethodToBeTested [0] params"))), Times.Once);
+            _mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: [42]"))), Times.Once);
+            _mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
+
         #endregion
 
         #region Helper --------------------------------------------------------
