@@ -18,8 +18,6 @@ namespace AOP.Attributes
         {
             if (!(args.Method.DeclaringType is null))
             {
-                var blubber =
-                    $"{GetIndentation()}Init: {args.Method.DeclaringType.FullName}.{args.Method.Name} [{args.Arguments.Length}] params";
                 Logger.Info($"{GetIndentation()}Init: {args.Method.DeclaringType.FullName}.{args.Method.Name} [{args.Arguments.Length}] params");
             }
             foreach (var item in args.Method.GetParameters())
@@ -58,6 +56,7 @@ namespace AOP.Attributes
 
         private string GetIndentation(int additionalIndentation = 0)
         {
+            // ToDo: Make code thread safe
             StackTrace st = new StackTrace(false);
             if (_firstIndentation == -1)
             {
