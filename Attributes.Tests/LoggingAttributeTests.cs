@@ -129,6 +129,26 @@ namespace AOP.Attributes.Tests
             _mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
         }
 
+        [Fact]
+        public void Method_Return_Values_Should_Be_Logged()
+        {
+            // Arrange 
+            // Act
+            var result = _classUnderTest.MethodWithReturnValueToBeTested();
+
+            // Assert
+            result.Should().Be(42);
+            
+
+            _mockedLogger.Verify(m => m.Fatal(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Error(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Warn(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Info(It.Is<string>(s =>
+                s.Equals("Init: AOP.Attributes.Tests.LoggingAttributeTests+ClassUnderTest.MethodWithReturnValueToBeTested [0] params"))), Times.Once);
+            _mockedLogger.Verify(m => m.Debug(It.IsAny<string>()), Times.Never);
+            _mockedLogger.Verify(m => m.Info(It.Is<string>(s => s.Equals("Exit: [42]"))), Times.Once);
+            _mockedLogger.Verify(m => m.Trace(It.IsAny<string>()), Times.Never);
+        }
         #endregion
 
         #region Helper --------------------------------------------------------
